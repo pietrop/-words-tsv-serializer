@@ -8,9 +8,9 @@ console.log(words);
 
 //
 
-const tsvS = serializeToTsv(soleioWorldListExample);
-console.log(tsvS);
+const tsv = serializeToTsv(soleioWorldListExample);
+console.log(tsv);
 
-const wordsS = deserializeTsvOfWords(tsvS);
+const wordsList = deserializeTsvOfWords(tsv);
 
-console.log(wordsS);
+console.log(wordsList);

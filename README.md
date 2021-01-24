@@ -15,7 +15,7 @@ Used as part of [pietrop/digital-paper-edit-firebase](https://github.com/pietrop
 _How to build and run the code/app_ -->
 
 ```
-git clone
+git clone git@github.com:pietrop/words-tsv-serializer.git
 ```
 
 ```
@@ -29,8 +29,31 @@ npm install
 ## Usage
 
 ```
-npm start
+npm install @pietrop/words-tsv-serializer
 ```
+
+<details>
+  <summary><code>serializeToTsv</code></summary>
+```js
+const { serializeToTsv } = require('./index.js');
+// a list of words from somewhere
+const soleioWorldListExample = require('./src/sample-data/Soleio Cuervo.json').words;
+const tsv = serializeToTsv(soleioWorldListExample);
+// do somethign with the tsv eg write to a file, save to a db etc..
+console.log(tsv);
+```
+</details>
+
+<details>
+  <summary><code>deserializeTsvOfWords</code></summary>
+```js
+const { deserializeTsvOfWords } = require('./index.js');
+// an example tsv 
+const tsv = `1.4\t3.9\tan\n3.9\t4\tyou\n4\t4.1\thear\n4.1\t4.2\tit?`;
+const words = deserializeTsvOfWords(tsv);
+console.log(words);
+```
+</details>
 
 ## System Architecture
 
