@@ -1,0 +1,10 @@
+src/example-usage.js
+
+src/sample-data/
+
+docs/
+.github/
+*.test.js
+
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md   

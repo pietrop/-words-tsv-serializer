@@ -1,0 +1,16 @@
+{
+  "name": "words-tsv-serializer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "publish:public": "npm publish --access public",
+    "publish:dry:run": "npm publish --dry-run"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
