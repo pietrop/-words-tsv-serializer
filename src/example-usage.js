@@ -8,7 +8,7 @@ const tsvSample = `1.4\t3.9\tan\n3.9\t4\tyou\n4\t4.1\thear\n4.1\t4.2\tit?`;
 
 //
 
-const tsv = serializeToTsv(soleioWorldListExample);
+const tsv = serializeToTsv({ words: soleioWorldListExample });
 console.log(tsv);
 
 const wordsList = deserializeTsvOfWords(tsv);

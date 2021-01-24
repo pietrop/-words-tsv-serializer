@@ -43,16 +43,20 @@ example converted tsv string
 4.1\t	4.2\t	it?\n
 ```
  */
-function serializeToTsv(words, reduceSize) {
+function serializeToTsv({ words, reduceSize, textAttribute }) {
   return words
     .map((word) => {
       let start = word.start;
       let end = word.end;
+      let text = word.text;
       if (reduceSize) {
         start = parseFloat(parseFloat(start).toFixed(1));
         end = parseFloat(parseFloat(end).toFixed(1));
       }
-      return `${start}\t${end}\t${word.text}`;
+      if (textAttribute) {
+        text = word[textAttribute];
+      }
+      return `${start}\t${end}\t${text}`;
     })
     .join('\n');
 }

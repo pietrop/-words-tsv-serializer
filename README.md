@@ -83,7 +83,7 @@ npm install @pietrop/words-tsv-serializer
 const { serializeToTsv } = require('@pietrop/words-tsv-serializer');
 // a list of words from somewhere
 const soleioWorldListExample = require('./src/sample-data/Soleio Cuervo.json').words;
-const tsv = serializeToTsv(soleioWorldListExample);
+const tsv = serializeToTsv({ words: soleioWorldListExample });
 // do somethign with the tsv eg write to a file, save to a db etc..
 console.log(tsv);
 ```
