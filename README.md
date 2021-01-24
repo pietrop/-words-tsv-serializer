@@ -34,6 +34,7 @@ npm install @pietrop/words-tsv-serializer
 
 <details>
   <summary><code>serializeToTsv</code></summary>
+  
 ```js
 const { serializeToTsv } = require('./index.js');
 // a list of words from somewhere
@@ -46,13 +47,15 @@ console.log(tsv);
 
 <details>
   <summary><code>deserializeTsvOfWords</code></summary>
+
 ```js
 const { deserializeTsvOfWords } = require('./index.js');
-// an example tsv 
+// an example tsv
 const tsv = `1.4\t3.9\tan\n3.9\t4\tyou\n4\t4.1\thear\n4.1\t4.2\tit?`;
 const words = deserializeTsvOfWords(tsv);
 console.log(words);
 ```
+
 </details>
 
 ## System Architecture
