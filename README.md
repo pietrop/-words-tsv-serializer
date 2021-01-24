@@ -36,7 +36,7 @@ npm install @pietrop/words-tsv-serializer
   <summary><code>serializeToTsv</code></summary>
   
 ```js
-const { serializeToTsv } = require('./index.js');
+const { serializeToTsv } = require('@pietrop/words-tsv-serializer');
 // a list of words from somewhere
 const soleioWorldListExample = require('./src/sample-data/Soleio Cuervo.json').words;
 const tsv = serializeToTsv(soleioWorldListExample);
@@ -49,7 +49,7 @@ console.log(tsv);
   <summary><code>deserializeTsvOfWords</code></summary>
 
 ```js
-const { deserializeTsvOfWords } = require('./index.js');
+const { deserializeTsvOfWords } = require('@pietrop/words-tsv-serializer');
 // an example tsv
 const tsv = `1.4\t3.9\tan\n3.9\t4\tyou\n4\t4.1\thear\n4.1\t4.2\tit?`;
 const words = deserializeTsvOfWords(tsv);
