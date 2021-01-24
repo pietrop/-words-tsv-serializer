@@ -43,12 +43,17 @@ example converted tsv string
 4.1\t	4.2\t	it?\n
 ```
  */
+
+//  could use https://www.npmjs.com/package/tsv instead, might save extra space
+const TSV = require('tsv');
+
 function serializeToTsv(words) {
-  return words
-    .map((word) => {
-      return `${word.start}\t${word.end}\t${word.text}`;
-    })
-    .join('\n');
+  // return words
+  //   .map((word) => {
+  //     return `${word.start}\t${word.end}\t${word.text}`;
+  //   })
+  //   .join('\n');
+  return TSV.stringify(words);
 }
 
 /**
@@ -57,14 +62,22 @@ function serializeToTsv(words) {
  * @return {array} list of words objects
  */
 function deserializeTsvOfWords(data) {
-  return data.split('\n').map((w) => {
-    const warray = w.split('\t');
-    return {
-      start: parseFloat(warray[0]),
-      end: parseFloat(warray[1]),
-      text: warray[2],
-    };
-  });
+  // return data.split('\n').map((w) => {
+  //   const warray = w.split('\t');
+  //   return {
+  //     start: parseFloat(warray[0]),
+  //     end: parseFloat(warray[1]),
+  //     text: warray[2],
+  //   };
+  // });
+  const list = TSV.parse(data);
+  return list;
+
+  // return list.map((word) => {
+  //   word.start = parseFloat(word.start);
+  //   word.end = parseFloat(word.end);
+  //   return word;
+  // });
 }
 
 module.exports.serializeToTsv = serializeToTsv;
