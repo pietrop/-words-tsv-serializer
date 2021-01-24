@@ -8,7 +8,11 @@
     "publish:public": "npm publish --access public",
     "publish:dry:run": "npm publish --dry-run"
   },
-  "author": "",
+  "author": "Pietro Passarelli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pietrop/words-tsv-serializer.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "jest": "^26.6.3"
