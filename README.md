@@ -28,6 +28,8 @@ npm install
 
 ## Usage
 
+On npm as [@pietrop/words-tsv-serializer](https://www.npmjs.com/package/@pietrop/words-tsv-serializer)
+
 ```
 npm install @pietrop/words-tsv-serializer
 ```
