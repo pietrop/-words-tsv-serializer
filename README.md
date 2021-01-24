@@ -33,6 +33,48 @@ npm install @pietrop/words-tsv-serializer
 ```
 
 <details>
+  <summary>Example list of words</summary>
+  
+```js
+[
+    {
+      "id": 0,
+      "start": 1.4,
+      "end": 3.9,
+      "text": "Can"
+    },
+    {
+      "id": 1,
+      "start": 3.9,
+      "end": 4,
+      "text": "you"
+    },
+    {
+      "id": 2,
+      "start": 4,
+      "end": 4.1,
+      "text": "hear"
+    },
+    {
+      "id": 3,
+      "start": 4.1,
+      "end": 4.2,
+      "text": "it?"
+    },
+    ..
+]
+```
+</details>
+
+<details>
+  <summary>Example tsv</summary>
+  
+```js
+1.4\t3.9\tan\n3.9\t4\tyou\n4\t4.1\thear\n4.1\t4.2\tit?
+```
+</details>
+
+<details>
   <summary><code>serializeToTsv</code></summary>
   
 ```js
