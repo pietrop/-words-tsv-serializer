@@ -66,14 +66,21 @@ function serializeToTsv({ words, reduceSize, textAttribute }) {
  * @param {strirng} data
  * @return {array} list of words objects
  */
-function deserializeTsvOfWords(data) {
+function deserializeTsvOfWords({ data, textAttribute }) {
   return data.split('\n').map((w) => {
     const warray = w.split('\t');
-    return {
+    let text = warray[2];
+
+    const word = {
       start: parseFloat(warray[0]),
       end: parseFloat(warray[1]),
-      text: warray[2],
     };
+    if (textAttribute) {
+      word[textAttribute] = text;
+    } else {
+      word.text = text;
+    }
+    return word;
   });
 }
 

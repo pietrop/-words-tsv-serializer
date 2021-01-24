@@ -38,32 +38,32 @@ test('words list to tsv - compressed rounded', () => {
 });
 
 test('tsv to words list', () => {
-  const words = deserializeTsvOfWords(tsvSample);
+  const words = deserializeTsvOfWords({ data: tsvSample });
 
   expect(words).toEqual(wordListSample);
 });
 
 test('tsv to words list - compressed rounded', () => {
-  const words = deserializeTsvOfWords(tsvSample);
+  const words = deserializeTsvOfWords({ data: tsvSample });
 
   expect(words).toEqual(wordListSample);
 });
 
 test('words list to tsv and back 1', () => {
   const tsv = serializeToTsv({ words: wordListSample });
-  const words = deserializeTsvOfWords(tsv);
+  const words = deserializeTsvOfWords({ data: tsv });
   expect(wordListSample).toEqual(words);
 });
 
 test('words list to tsv and back 1 - compressed rounded', () => {
   const tsv = serializeToTsv({ words: wordListSample, reduceSize: true });
-  const words = deserializeTsvOfWords(tsv);
+  const words = deserializeTsvOfWords({ data: tsv });
   expect(wordListSample).toEqual(words);
 });
 
 test('words list to tsv and back 2 - longer example', () => {
   const tsv = serializeToTsv({ words: soleioWorldListExample });
-  const words = deserializeTsvOfWords(tsv);
+  const words = deserializeTsvOfWords({ data: tsv });
   expect(soleioWorldListExample).toEqual(words);
 });
 
@@ -72,12 +72,12 @@ test('words list to tsv and back 2 - longer example', () => {
 // eg word.start 1.9393 will be rounded 1.9
 test('words list to tsv and back 2 - longer example - compressed rounded', () => {
   const tsv = serializeToTsv({ words: soleioWorldListExample, reduceSize: true });
-  const words = deserializeTsvOfWords(tsv);
+  const words = deserializeTsvOfWords({ data: tsv });
   expect(soleioWorldListExample).not.toEqual(words);
 });
 
 test('words list to tsv and back 2 - longer example - compressed rounded', () => {
   const tsv = serializeToTsv({ words: soleioWorldListExample, reduceSize: true });
-  const words = deserializeTsvOfWords(tsv);
+  const words = deserializeTsvOfWords({ data: tsv });
   expect(soleioWorldListExample.length).toEqual(words.length);
 });

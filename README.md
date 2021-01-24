@@ -96,7 +96,7 @@ console.log(tsv);
 const { deserializeTsvOfWords } = require('@pietrop/words-tsv-serializer');
 // an example tsv
 const tsv = `1.4\t3.9\tan\n3.9\t4\tyou\n4\t4.1\thear\n4.1\t4.2\tit?`;
-const words = deserializeTsvOfWords(tsv);
+const words = deserializeTsvOfWords({ data: tsv });
 console.log(words);
 ```
 
